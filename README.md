@@ -728,7 +728,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	if WindowConfig.ShowIcon then
 		WindowName.Position = UDim2.new(0, 50, 0, -24)
 		local WindowIcon = SetProps(MakeElement("Image", WindowConfig.Icon), {
-			ImageColor3 = OrionLib.Themes[OrionLib.SelectedTheme].Text
+			ImageColor3 = OrionLib.Themes.WhiteTheme.Text
 			Size = UDim2.new(0, 20, 0, 20),
 			Position = UDim2.new(0, 25, 0, 15)
 		})
