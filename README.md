@@ -25,20 +25,20 @@ local OrionLib = {
 		},
 
 		Bliz_T = {
-			Main = Color3.fromRGB(0, 0, 0), -- xd
-			Second = Color3.fromRGB(20, 20, 20), -- xd
-			Stroke = Color3.fromRGB(100, 150, 255), -- xd
-			Divider = Color3.fromRGB(80, 120, 200), -- xd
-			Text = Color3.fromRGB(180, 220, 255), -- xd
-			TextDark = Color3.fromRGB(150, 180, 230) --xd
+			Main = Color3.fromRGB(0, 0, 0),
+			Second = Color3.fromRGB(20, 20, 20),
+			Stroke = Color3.fromRGB(100, 150, 255),
+			Divider = Color3.fromRGB(80, 120, 200),
+			Text = Color3.fromRGB(180, 220, 255),
+			TextDark = Color3.fromRGB(150, 180, 230)
 		},
-                Custom = {
-			Main = Color3.fromRGB(180,180,180), -- xd
-			Second = Color3.fromRGB(80,80,80), -- xd
-			Stroke = Color3.fromRGB(20,20,20), -- xd
-			Divider = Color3.fromRGB(0,0,0), -- xd
-			Text = Color3.fromRGB(138,134,142), -- xd
-			TextDark = Color3.fromRGB(57,61,71) -- xd
+        WhiteCustom = {
+			Main = Color3.fromRGB(219,226,233),
+			Second = Color3.fromRGB(190,195,198),
+			Stroke = Color3.fromRGB(20,20,20),
+			Divider = Color3.fromRGB(0,0,0),
+			Text = Color3.fromRGB(255,184,28),
+			TextDark = Color3.fromRGB(131,145,161)
 		}
 
 	},
