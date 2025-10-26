@@ -33,8 +33,8 @@ local OrionLib = {
 			TextDark = Color3.fromRGB(150, 180, 230) --xd
 		},
                 Custom = {
-			Main = Color3.fromRGB(255,133,15), -- xd
-			Second = Color3.fromRGB(226,82,47), -- xd
+			Main = Color3.fromRGB(180,180,180), -- xd
+			Second = Color3.fromRGB(200,200,200), -- xd
 			Stroke = Color3.fromRGB(252,210,153), -- xd
 			Divider = Color3.fromRGB(221,50,36), -- xd
 			Text = Color3.fromRGB(252,210,173), -- xd
