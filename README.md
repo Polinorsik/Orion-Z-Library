@@ -25,20 +25,20 @@ local OrionLib = {
 		},
 
 		Bliz_T = {
-			Main = Color3.fromRGB(0, 0, 0),
-			Second = Color3.fromRGB(20, 20, 20),
-			Stroke = Color3.fromRGB(100, 150, 255),
-			Divider = Color3.fromRGB(80, 120, 200),
-			Text = Color3.fromRGB(180, 220, 255),
-			TextDark = Color3.fromRGB(150, 180, 230)
+			Main = Color3.fromRGB(0, 0, 0), -- xd
+			Second = Color3.fromRGB(20, 20, 20), -- xd
+			Stroke = Color3.fromRGB(100, 150, 255), -- xd
+			Divider = Color3.fromRGB(80, 120, 200), -- xd
+			Text = Color3.fromRGB(180, 220, 255), -- xd
+			TextDark = Color3.fromRGB(150, 180, 230) --xd
 		},
-        WhiteCustom = {
-			Main = Color3.fromRGB(190,195,198),
-			Second = Color3.fromRGB(219,226,233),
-			Stroke = Color3.fromRGB(20,20,20),
-			Divider = Color3.fromRGB(0,0,0),
-			Text = Color3.fromRGB(203,161,53),
-			TextDark = Color3.fromRGB(131,145,161)
+                Custom = {
+			Main = Color3.fromRGB(255,133,15), -- xd
+			Second = Color3.fromRGB(226,82,47), -- xd
+			Stroke = Color3.fromRGB(252,210,153), -- xd
+			Divider = Color3.fromRGB(221,50,36), -- xd
+			Text = Color3.fromRGB(252,210,173), -- xd
+			TextDark = Color3.fromRGB(203,96,21) -- xd
 		}
 
 	},
@@ -47,7 +47,8 @@ local OrionLib = {
 	SaveCfg = false
 }
 
--- local Icons
+--Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
+local Icons = {}
 
 local Success, Response = pcall(function()
 	Icons = HttpService:JSONDecode(game:HttpGetAsync("https://raw.githubusercontent.com/evoincorp/lucideblox/master/src/modules/util/icons.json")).icons
@@ -64,7 +65,6 @@ local function GetIcon(IconName)
 		return nil
 	end
 end
-
 
 local useStudio = RunService:IsStudio() or false
 
@@ -892,7 +892,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 		if GetIcon(TabConfig.Icon) ~= nil then
 			TabFrame.Ico.Image = GetIcon(TabConfig.Icon)
-		end
+		end	
 
 		local Container = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 5), {
 			Size = UDim2.new(1, -150, 1, -50),
