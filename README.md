@@ -47,10 +47,6 @@ local OrionLib = {
 	SaveCfg = false
 }
 
-if not Success then
-	warn("\nOrion Library - Failed to load Feather Icons. Error code: " .. Response .. "\n")
-end	
-
 local function GetIcon(IconName)
 	return IconName
 end
