@@ -47,49 +47,24 @@ local OrionLib = {
 	SaveCfg = false
 }
 
-local Icons = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/refs/heads/main/icons.lua"))()
-local function GetIcon(name : string): {id: number, imageRectSize: Vector2, imageRectOffset: Vector2}
- if not Icons then
-  warn("Lucide Icons: Cannot use icons as icons library is not loaded")
-  return
- end
- name = string.match(string.lower(name), "^%s*(.*)%s*$") :: string
- local sizedicons = Icons['48px']
- local r = sizedicons[name]
- if not r then
-  error(Lucide Icons: Failed to find icon by the name of "{name}", 2)
- end
+local Icons
 
- local rirs = r[2]
- local riro = r[3]
+local Success, Response = pcall(function()
+	Icons = HttpService:JSONDecode(game:HttpGetAsync("https://raw.githubusercontent.com/evoincorp/lucideblox/master/src/modules/util/icons.json")).icons
+end)
 
- if type(r[1]) ~= "number" or type(rirs) ~= "table" or type(riro) ~= "table" then
-  error("Lucide Icons: Internal error: Invalid auto-generated asset entry")
- end
+if not Success then
+	warn("\nOrion Library - Failed to load Feather Icons. Error code: " .. Response .. "\n")
+end	
 
- local irs = Vector2.new(rirs[1], rirs[2])
- local iro = Vector2.new(riro[1], riro[2])
-
- local asset = {
-  id = r[1],
-  imageRectSize = irs,
-  imageRectOffset = iro,
- }
-
- return asset
+local function GetIcon(IconName)
+	if Icons[IconName] ~= nil then
+		return Icons[IconName]
+	else
+		return nil
+	end
 end
--- Converts ID to asset URI. Returns rbxassetid://0 if ID is not a number
-local function getAssetUri(id: any): string
- local assetUri = "rbxassetid://0" -- Default to empty image
- if type(id) == "number" then
-  assetUri = "rbxassetid://" .. id
- elseif type(id) == "string" and not Icons then
-  warn("Orion | Cannot use Lucide icons as icons library is not loaded")
- else
-  warn("Orion | The icon argument must either be an icon ID (number) or a Lucide icon name (string)")
- end
- return assetUri
-end
+
 
 local useStudio = RunService:IsStudio() or false
 
