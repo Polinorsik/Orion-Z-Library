@@ -4,7 +4,7 @@ local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")
 local CoreGui = game:GetService("CoreGui")
 local PlayerService = game:GetService("Players")
-local UserService = game:GetService("UserService")
+local UserService = game:GetService("UserService")FOr
 
 local LocalPlayer = PlayerService.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
@@ -265,20 +265,6 @@ local function LoadCfg(Config)
 end
 
 local function SaveCfg(Name)
-	local Data = {}
-	for i,v in pairs(OrionLib.Flags) do
-		if v.Save then
-			if v.Type == "Colorpicker" then
-				Data[i] = PackColor(v.Value)
-			else
-				Data[i] = v.Value
-			end
-		end	
-	end
-	writefile(OrionLib.Folder .. "/" .. Name .. ".txt", tostring(HttpService:JSONEncode(Data)))
-end
-
-local function OrionLib:SaveConfig(Name)
 	local Data = {}
 	for i,v in pairs(OrionLib.Flags) do
 		if v.Save then
