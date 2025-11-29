@@ -278,7 +278,7 @@ local function SaveCfg(Name)
 	writefile(OrionLib.Folder .. "/" .. Name .. ".txt", tostring(HttpService:JSONEncode(Data)))
 end
 
-local function OrionLib:SaveCfg(Name)
+local function OrionLib:SaveConfig(Name)
 	local Data = {}
 	for i,v in pairs(OrionLib.Flags) do
 		if v.Save then
